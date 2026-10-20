@@ -1,0 +1,15 @@
+[project]
+name = "whisper-mcp"
+version = "0.1.0"
+description = "Local Whisper mic transcription, exposed as an MCP server."
+readme = "README.md"
+license = { text = "MIT" }
+# PyAV (faster-whisper dep) has no 3.14 wheels yet, so cap below 3.14.
+# uv will download a compatible Python automatically if none is on the system.
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "mcp>=2.0.0",
+    "faster-whisper>=1.0.0",
+    "sounddevice>=0.4.6",
+    "numpy>=1.24",
+]
