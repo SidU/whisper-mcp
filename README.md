@@ -2,7 +2,7 @@
 
 Local Whisper mic transcription, exposed as an [MCP](https://modelcontextprotocol.io) server.
 
-Lets any MCP client — Claude Code, Claude Desktop, Quickwork, Cursor, etc. — start a mic recording, read the live transcript as it accumulates, and stop it. Everything runs locally. No audio leaves your machine.
+Lets any MCP client — Claude Code, Claude Desktop, Cursor, etc. — start a mic recording, read the live transcript as it accumulates, and stop it. Everything runs locally. No audio leaves your machine.
 
 Built on top of [faster-whisper](https://github.com/SYSTRAN/faster-whisper) with VAD and incremental decoding. Packaged with [uv](https://docs.astral.sh/uv/) — one command to install, including the right Python.
 
@@ -46,7 +46,6 @@ Run `uv run whisper_mcp.py --print-config` from the repo and paste the output in
 |---|---|
 | Claude Desktop | `~/Library/Application Support/Claude/claude_desktop_config.json` |
 | Claude Code | `~/.claude.json` (user) or `.mcp.json` (project) |
-| Quickwork | `~/.quickwork/mcp_config.json` |
 | Cursor | `~/.cursor/mcp.json` |
 
 Then restart the client. `uv run` handles the venv activation and Python selection on every invocation — no need to point at `.venv/bin/python` yourself.

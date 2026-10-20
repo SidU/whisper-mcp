@@ -2,7 +2,7 @@
 """MCP server for local Whisper mic transcription.
 
 Wraps transcribe_mic.py (faster-whisper, in a local venv) as an MCP server so
-MCP clients (Claude Code, Claude Desktop, Quickwork, etc.) can start, stop, and
+MCP clients (Claude Code, Claude Desktop, Cursor, etc.) can start, stop, and
 read a live transcript from the mic.
 
 Design:
@@ -377,7 +377,6 @@ def _print_config() -> None:
     print("Config paths:")
     print("  Claude Desktop:  ~/Library/Application Support/Claude/claude_desktop_config.json")
     print("  Claude Code:     ~/.claude.json  (or project .mcp.json)")
-    print("  Quickwork:       ~/.quickwork/mcp_config.json")
     print("  Cursor:          ~/.cursor/mcp.json")
     print()
     print("--- If the config file is new / empty, paste this whole thing: ---")
