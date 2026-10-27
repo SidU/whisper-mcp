@@ -6,6 +6,18 @@ Lets any MCP client — Claude Code, Claude Desktop, Cursor, etc. — start a mi
 
 Built on top of [faster-whisper](https://github.com/SYSTRAN/faster-whisper) with VAD and incremental decoding. Packaged with [uv](https://docs.astral.sh/uv/) — one command to install, including the right Python.
 
+## Set up with an agent
+
+Start with [AGENT_SETUP.md](AGENT_SETUP.md) for local installation, MCP-client configuration, verification, and privacy/recording boundaries. Give your agent this copyable prompt:
+
+```text
+Set up whisper-mcp locally for my MCP client using:
+https://github.com/SidU/whisper-mcp/blob/main/AGENT_SETUP.md
+Preserve my existing configuration and ask before recording a microphone test.
+```
+
+Agents do not necessarily load setup guides automatically; sharing the direct link and asking the agent to follow it is the reliable discovery path. Setup does not authorize recording. Audio inference is local, but transcript text returned to your MCP client may be sent to its cloud model/provider.
+
 ## Why
 
 Meeting-notes / interview / voice-memo workflows typically mean juggling two things: *recording* and *the agent that's going to use the transcript*. This bridges them. Your agent calls `start_recording` when a meeting begins, polls `get_transcript` for new content as the meeting progresses, and calls `stop_recording` at the end — all from the same conversation.
